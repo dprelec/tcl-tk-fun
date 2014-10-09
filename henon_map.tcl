@@ -10,6 +10,8 @@ exec tclsh8.5 "$0" "$@"
 #
 # dprelec, 2014-10-09
 
+package require Tk
+
 global entry_iter
 global entry_a
 global entry_b
@@ -25,8 +27,6 @@ proc next_y {x b} {
 }
 
 proc draw_gui {} {
-  global entry_a
-  global entry_b 
   pack [frame .f] -side top
   pack [label .f.title -text "Hénon map" -font {Helvetica 12}] -side top
   pack [canvas .f.henon -width 500 -height 500] -side top
