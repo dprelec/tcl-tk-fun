@@ -1,5 +1,5 @@
-tcl-tk-fun
-==========
+Fun with Tcl/Tk
+===============
 
 Doing fun stuff with Tcl/Tk, simple experiments in drawing.
 
