@@ -44,10 +44,9 @@ proc draw_gui {} {
 }
 
 
-proc draw_map {x1 y1 a b} {
-  global entry_iter 
+proc draw_map {iter x1 y1 a b} {
   .f.henon delete dot
-  for {set i 0} {$i <= $entry_iter} {incr i} {
+  for {set i 0} {$i <= $iter} {incr i} {
     set xn [next_x $x1 $y1 $a]
     set yn [next_y $x1 $b]
 
@@ -66,10 +65,11 @@ proc draw_map {x1 y1 a b} {
 proc redraw_map {} {
   global entry_a
   global entry_b
+  global entry_iter 
   global x1 
   global y1
 
-  draw_map $x1 $y1 $entry_a $entry_b 
+  draw_map $entry_iter $x1 $y1 $entry_a $entry_b 
 }
 
 proc main {} {
@@ -88,7 +88,7 @@ proc main {} {
   set entry_iter 5000
   
   draw_gui
-  draw_map $x1 $y1 $a $b
+  draw_map $entry_iter $x1 $y1 $a $b
 }
 
 main
