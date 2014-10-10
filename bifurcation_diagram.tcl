@@ -34,16 +34,16 @@ proc draw_gui {} {
 
 proc draw_diagram {iter} {
   .f.diagram delete dot
-  set x1 0.1
+  set x1 0.423
   for {set bigr 110} {$bigr <= 400} {incr bigr} {
     set r [expr {$bigr/100.}]
     for {set i 0} {$i <= $iter} {incr i} {
       set xn [next_x $x1 $r]
 
-      set rect_x1 [expr {120 * $r}]
-      set rect_y1 [expr {320 - 200 * $xn}]
+      set rect_x1 [expr {160 * $r - 160}]
+      set rect_y1 [expr {420 - 420 * $xn}]
       set rect_x2 [expr {$rect_x1 + 1}]
-      set rect_y2 [expr {$rect_y1 + 1}]
+      set rect_y2 [expr {$rect_y1 + 0}]
 
       .f.diagram create line $rect_x1 $rect_y1 $rect_x2 $rect_y2 -tags dot
 
