@@ -45,8 +45,6 @@ proc draw_diagram {iter} {
       set rect_x2 [expr {$rect_x1 + 1}]
       set rect_y2 [expr {$rect_y1 + 1}]
 
-      #puts "$rect_x1 $rect_y1 $rect_x2 $rect_y2"
-
       .f.diagram create line $rect_x1 $rect_y1 $rect_x2 $rect_y2 -tags dot
 
       set x1 $xn
